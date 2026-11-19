@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="ur" dir="ltr" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Gaming Store | ٹاپ گیمنگ سٹور - Fast & 100% Safe Top-Up</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Noto+Sans+Arabic:wght@500;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans Arabic', 'sans-serif'],
+                        urdu: ['Noto Nastaliq Urdu', 'Noto Sans Arabic', 'serif'],
+                    },
+                    colors: {
+                        gaming: {
+                            dark: '#070913',
+                            card: '#0f1426',
+                            cardHover: '#161d36',
+                            blue: '#00f0ff',
+                            purple: '#9d4edd',
+                            gold: '#ffb703',
+                        }
+                    },
+                    boxShadow: {
+                        'neon-blue': '0 0 20px rgba(0, 240, 255, 0.35)',
+                        'neon-purple': '0 0 20px rgba(157, 78, 221, 0.35)',
+                        'neon-gold': '0 0 20px rgba(255, 183, 3, 0.35)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #070913;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(157, 78, 221, 0.14) 0%, transparent 45%),
+                radial-gradient(circle at 85% 30%, rgba(0, 240, 255, 0.12) 0%, transparent 45%),
+                radial-gradient(circle at 50% 85%, rgba(255, 183, 3, 0.08) 0%, transparent 50%),
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+            color: #f8fafc;
+        }
+
+        .urdu-text {
+            font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', serif;
+            line-height: 2.1;
+        }
+
+        .urdu-ui {
+            font-family: 'Noto Sans Arabic', sans-serif;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #00f0ff 0%, #c77dff 50%, #ffb703 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card-border-glow {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-border-glow:hover {
+            transform: translateY(-6px);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #070913;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9d4edd;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-gaming-purple selection:text-white">
+
+    <!-- Toast Notification Box -->
+    <div id="toast-box" class="fixed bottom-5 right-5 z-50 hidden transform transition-all duration-300 translate-y-4 opacity-0">
+        <div class="bg-slate-900/95 border border-gaming-blue text-white px-5 py-3.5 rounded-2xl shadow-neon-blue flex items-center gap-3 backdrop-blur-md">
+            <i class="fa-solid fa-circle-check text-gaming-blue text-xl"></i>
+            <div>
+                <p id="toast-title" class="font-bold text-sm">Success</p>
+                <p id="toast-msg" class="text-xs text-slate-300">Action completed.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-gaming-dark/90 backdrop-blur-xl border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-gaming-blue via-gaming-purple to-gaming-gold p-[2px] shadow-neon-purple group-hover:scale-105 transition-transform">
+                    <div class="w-full h-full bg-gaming-dark rounded-[10px] flex items-center justify-center">
+                        <i class="fa-solid fa-gamepad text-xl text-gaming-blue"></i>
+                    </div>
+                </div>
+                <div>
+                    <span class="block font-black text-lg sm:text-xl tracking-tight text-white leading-none">
+                        TOP GAMING <span class="text-gaming-gold">STORE</span>
+                    </span>
+                    <span class="block text-xs text-gaming-blue font-semibold urdu-ui mt-1">
+                        ٹاپ گیمنگ سٹور • آن لائن ٹاپ اَپ
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300">
+                <a href="#services" class="hover:text-gaming-blue transition-colors">Services / گیمز پیکجز</a>
+                <a href="#quick-order" class="hover:text-gaming-gold transition-colors">Quick Order / آرڈر کریں</a>
+                <a href="#social-post" class="hover:text-gaming-purple transition-colors">Promo Card / اشتہار</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact / رابطہ</a>
+            </nav>
+
+            <!-- Mobile Menu Button & WhatsApp CTA -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <a href="https://wa.me/923415300191?text=Assalam-o-Alaikum%20Top%20Gaming%20Store!%20Mujhe%20Top-Up%20service%20chahiye." 
+                   target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs sm:text-sm px-3.5 sm:px-4 py-2.5 rounded-xl shadow-lg shadow-emerald-500/25 transition-all active:scale-95">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>0341-5300191</span>
+                </a>
+                <button id="mobile-menu-btn" type="button" class="md:hidden p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-slate-200 hover:text-gaming-blue">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gaming-card border-b border-slate-800 px-4 pt-2 pb-4 space-y-2">
+            <a href="#services" class="block py-2 px-3 rounded-lg hover:bg-slate-800 text-slate-200 font-semibold">Services / گیمز پیکجز</a>
+            <a href="#quick-order" class="block py-2 px-3 rounded-lg hover:bg-slate-800 text-slate-200 font-semibold">Quick Order / فوری آرڈر</a>
+            <a href="#social-post" class="block py-2 px-3 rounded-lg hover:bg-slate-800 text-slate-200 font-semibold">Promo Card / اشتہار کارڈ</a>
+            <a href="#contact" class="block py-2 px-3 rounded-lg hover:bg-slate-800 text-slate-200 font-semibold">Contact / رابطہ</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        
+        <!-- 1) HERO SECTION -->
+        <section class="relative pt-12 pb-16 sm:pt-20 sm:pb-24 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-4xl mx-auto">
+                    <!-- Trust Pill -->
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/90 border border-gaming-purple/50 text-xs sm:text-sm font-semibold text-purple-200 mb-6 shadow-neon-purple">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        <span>FAST & 100% SAFE • فوری اور مکمل محفوظ سروس</span>
+                    </div>
+
+                    <!-- Main Bilingual Heading -->
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight mb-4 leading-tight">
+                        <span class="block text-white">Top Gaming Store</span>
+                        <span class="block gradient-text mt-1 text-3xl sm:text-5xl lg:text-6xl">Gaming Top-Up & Tokens</span>
+                    </h1>
+
+                    <p class="urdu-text text-2xl sm:text-3xl text-gaming-gold font-bold mb-6" dir="rtl">
+                        ٹاپ گیمنگ سٹور — تیز ترین اور بااعتماد آن لائن گیمنگ ٹاپ اَپ سروس
+                    </p>
+
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
+                        Instant delivery for <strong class="text-gaming-gold">PUBG Mobile UC</strong>, <strong class="text-gaming-blue">Free Fire Diamonds</strong>, <strong class="text-emerald-400">Ludo World Tokens</strong>, and <strong class="text-purple-400">Honor of Kings Tokens</strong> at the best rates in Pakistan!
+                    </p>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+                        <a href="#services" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-gaming-blue to-gaming-purple text-slate-950 font-black text-base shadow-neon-blue hover:opacity-95 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-bolt"></i>
+                            <span>Select Game / گیم منتخب کریں</span>
+                        </a>
+                        <a href="#quick-order" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-slate-900/90 hover:bg-slate-800 border border-gaming-gold/60 text-gaming-gold font-bold text-base shadow-neon-gold transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span>Quick Order / ابھی آرڈر کریں</span>
+                        </a>
+                    </div>
+
+                    <!-- Highlight Badges -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+                        <div class="bg-gaming-card/90 border border-slate-800 rounded-2xl p-4 flex items-center justify-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-gaming-blue/15 text-gaming-blue flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-gauge-high"></i>
+                            </div>
+                            <div class="text-left">
+                                <p class="font-bold text-sm text-white">Super Fast Delivery</p>
+                                <p class="text-xs text-slate-400 urdu-ui">چند منٹوں میں فوری ٹاپ اَپ</p>
+                            </div>
+                        </div>
+                        <div class="bg-gaming-card/90 border border-slate-800 rounded-2xl p-4 flex items-center justify-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-gaming-gold/15 text-gaming-gold flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div class="text-left">
+                                <p class="font-bold text-sm text-white">Fast & 100% Safe</p>
+                                <p class="text-xs text-slate-400 urdu-ui">مکمل محفوظ اور گارنٹی شدہ</p>
+                            </div>
+                        </div>
+                        <div class="bg-gaming-card/90 border border-slate-800 rounded-2xl p-4 flex items-center justify-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center text-lg">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div class="text-left">
+                                <p class="font-bold text-sm text-white">24/7 WhatsApp Support</p>
+                                <p class="text-xs text-slate-400 urdu-ui">براہِ راست واٹس ایپ رابطہ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2) INTERACTIVE SERVICE CARDS SECTION -->
+        <section id="services" class="py-16 bg-slate-950/50 border-y border-slate-800/70">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <span class="text-gaming-blue font-bold uppercase tracking-widest text-xs">Top Gaming Store Catalog</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white mt-1">Available Games & Top-Up Packages</h2>
+                    <p class="urdu-ui text-gaming-gold text-lg font-bold mt-2" dir="rtl">
+                        اپنی پسندیدہ گیم کا پیکج منتخب کریں اور ایک کلک میں واٹس ایپ پر آرڈر بھیجیں
+                    </p>
+                </div>
+
+                <!-- Cards Grid (Populated automatically by JavaScript) -->
+                <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            </div>
+        </section>
+
+        <!-- 3) QUICK ORDER / INQUIRY FORM -->
+        <section id="quick-order" class="py-16 sm:py-24">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-gaming-card border border-gaming-purple/40 rounded-3xl p-6 sm:p-10 shadow-neon-purple relative overflow-hidden">
+                    <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-gaming-blue via-gaming-purple to-gaming-gold"></div>
+
+                    <div class="text-center mb-8">
+                        <span class="inline-block px-3 py-1 rounded-lg bg-gaming-gold/15 text-gaming-gold text-xs font-bold mb-2">
+                            DIRECT WHATSAPP CHECKOUT
+                        </span>
+                        <h2 class="text-2xl sm:text-4xl font-black text-white">Quick Order Form / فوری آرڈر فارم</h2>
+                        <p class="text-slate-400 text-sm sm:text-base mt-2 urdu-ui" dir="rtl">
+                            نیچے گیم منتخب کریں، اپنی پلیئر آئی ڈی (Player ID) اور پیکج لکھیں اور سیدھا واٹس ایپ پر آرڈر بھیجیں۔
+                        </p>
+                    </div>
+
+                    <form id="whatsapp-order-form" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Select Game -->
+                            <div>
+                                <label for="service-select" class="block text-sm font-bold text-slate-200 mb-2">
+                                    Select Game / Service <span class="text-gaming-blue urdu-ui">(گیم منتخب کریں)</span>
+                                </label>
+                                <select id="service-select" required
+                                    class="w-full bg-slate-900 border border-slate-700 focus:border-gaming-blue focus:ring-2 focus:ring-gaming-blue/30 rounded-xl px-4 py-3.5 text-white font-semibold outline-none transition-all">
+                                    <option value="PUBG Mobile UC (پب جی یو سی)">🎮 PUBG Mobile UC (پب جی یو سی)</option>
+                                    <option value="Free Fire Diamonds (فری فائر ڈائمنڈز)">🔥 Free Fire Diamonds (فری فائر ڈائمنڈز)</option>
+                                    <option value="Ludo World Tokens / Coins (لوڈو ورلڈ)">🎲 Ludo World Tokens / Coins (لوڈو ورلڈ)</option>
+                                    <option value="Honor of Kings Tokens (آنر آف کنگز)">👑 Honor of Kings Tokens (آنر آف کنگز)</option>
+                                    <option value="Other Game / Digital Top-Up">💳 Other Game / Digital Top-Up (دیگر گیمز)</option>
+                                </select>
+                            </div>
+
+                            <!-- Player ID -->
+                            <div>
+                                <label for="player-id" class="block text-sm font-bold text-slate-200 mb-2">
+                                    Player ID / UID <span class="text-gaming-gold urdu-ui">(پلیئر آئی ڈی لکھیں)</span>
+                                </label>
+                                <input type="text" id="player-id" required placeholder="e.g. 5123456789"
+                                    class="w-full bg-slate-900 border border-slate-700 focus:border-gaming-gold focus:ring-2 focus:ring-gaming-gold/30 rounded-xl px-4 py-3.5 text-white placeholder-slate-500 outline-none transition-all">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Package Amount -->
+                            <div>
+                                <label for="package-amount" class="block text-sm font-bold text-slate-200 mb-2">
+                                    Package / Amount <span class="text-gaming-purple urdu-ui">(پیکج یا مقدار لکھیں)</span>
+                                </label>
+                                <input type="text" id="package-amount" required placeholder="e.g. 60 UC, 325 UC, 500 Diamonds..."
+                                    class="w-full bg-slate-900 border border-slate-700 focus:border-gaming-purple focus:ring-2 focus:ring-gaming-purple/30 rounded-xl px-4 py-3.5 text-white placeholder-slate-500 outline-none transition-all">
+                            </div>
+
+                            <!-- Customer Name -->
+                            <div>
+                                <label for="customer-name" class="block text-sm font-bold text-slate-200 mb-2">
+                                    Your Name <span class="text-slate-400 text-xs">(Optional / آپ کا نام)</span>
+                                </label>
+                                <input type="text" id="customer-name" placeholder="Enter your name"
+                                    class="w-full bg-slate-900 border border-slate-700 focus:border-gaming-blue focus:ring-2 focus:ring-gaming-blue/30 rounded-xl px-4 py-3.5 text-white placeholder-slate-500 outline-none transition-all">
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit"
+                            class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-400 to-gaming-blue text-slate-950 font-black text-base sm:text-lg shadow-lg shadow-emerald-500/25 hover:brightness-110 transition-all flex items-center justify-center gap-3 cursor-pointer active:scale-[0.99]">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            <span>Send Order on WhatsApp / واٹس ایپ پر آرڈر بھیجیں</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4) READY-TO-SHARE PROMO POST CARD -->
+        <section id="social-post" class="py-16 bg-slate-950/60 border-t border-slate-800/70">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-8">
+                    <span class="text-gaming-gold font-bold uppercase tracking-widest text-xs">Marketing & Promotion</span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-white mt-1">Ready-Made Advertisement Card / اشتہاری کارڈ</h2>
+                    <p class="text-slate-400 text-sm mt-1 urdu-ui" dir="rtl">
+                        اپنے کاروبار کی مشہوری کے لیے نیچے دیے گئے بٹن سے پوسٹ کاپی کریں اور واٹس ایپ یا فیس بک پر شیئر کریں۔
+                    </p>
+                </div>
+
+                <!-- Styled Graphical Ad Card -->
+                <div class="max-w-xl mx-auto rounded-3xl p-1 bg-gradient-to-br from-gaming-blue via-gaming-purple to-gaming-gold shadow-neon-purple">
+                    <div class="bg-[#0a0e1f] rounded-[22px] p-6 sm:p-8 relative overflow-hidden" dir="rtl">
+                        <i class="fa-solid fa-gamepad absolute -bottom-6 -left-6 text-9xl text-white/[0.03] -rotate-12 pointer-events-none"></i>
+
+                        <div class="text-center border-b border-slate-800 pb-5 mb-5">
+                            <span class="inline-block px-3 py-1 rounded-full bg-gaming-gold/20 text-gaming-gold text-xs font-bold mb-2 font-sans" dir="ltr">
+                                ⚡ FAST & 100% SAFE TOP-UP ⚡
+                            </span>
+                            <h3 class="urdu-text text-2xl sm:text-3xl font-bold text-white">
+                                🎮 ٹاپ گیمنگ سٹور — آن لائن گیمنگ ٹاپ اَپ 🎮
+                            </h3>
+                            <p class="text-gaming-blue font-sans font-extrabold text-sm tracking-wider mt-1" dir="ltr">
+                                TOP GAMING STORE
+                            </p>
+                        </div>
+
+                        <p class="urdu-ui text-slate-200 text-center text-base sm:text-lg mb-6 leading-relaxed">
+                            اب اپنی پسندیدہ گیمز میں <span class="text-gaming-gold font-bold">UC، ڈائمنڈز اور ٹوکنز</span> حاصل کریں انتہائی مناسب ریٹ اور فوری ڈلیوری کے ساتھ! 🔥
+                        </p>
+
+                        <!-- Services List inside Card -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6 urdu-ui text-sm sm:text-base">
+                            <div class="bg-slate-900/90 border border-gaming-gold/30 rounded-xl px-4 py-2.5 flex items-center gap-3">
+                                <span class="text-gaming-gold text-lg">🪂</span>
+                                <span class="font-bold text-white">PUBG Mobile UC</span>
+                            </div>
+                            <div class="bg-slate-900/90 border border-orange-500/30 rounded-xl px-4 py-2.5 flex items-center gap-3">
+                                <span class="text-orange-400 text-lg">🔥</span>
+                                <span class="font-bold text-white">Free Fire Diamonds</span>
+                            </div>
+                            <div class="bg-slate-900/90 border border-emerald-400/30 rounded-xl px-4 py-2.5 flex items-center gap-3">
+                                <span class="text-emerald-400 text-lg">🎲</span>
+                                <span class="font-bold text-white">Ludo World Tokens</span>
+                            </div>
+                            <div class="bg-slate-900/90 border border-gaming-blue/30 rounded-xl px-4 py-2.5 flex items-center gap-3">
+                                <span class="text-gaming-blue text-lg">👑</span>
+                                <span class="font-bold text-white">Honor of Kings</span>
+                            </div>
+                        </div>
+
+                        <!-- Contact Details inside Card -->
+                        <div class="bg-gradient-to-r from-slate-900 via-slate-800/90 to-slate-900 border border-slate-700 rounded-2xl p-4 space-y-2 text-sm font-sans" dir="ltr">
+                            <div class="flex items-center justify-between text-slate-200">
+                                <span class="font-semibold text-emerald-400"><i class="fa-brands fa-whatsapp mr-2"></i>WhatsApp / Call:</span>
+                                <span class="font-black text-white tracking-wide text-base">03415300191</span>
+                            </div>
+                            <div class="flex items-center justify-between text-slate-200">
+                                <span class="font-semibold text-gaming-gold"><i class="fa-solid fa-shield-check mr-2"></i>Service:</span>
+                                <span class="font-bold text-white">Fast & 100% Safe</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copy Ad Text Button -->
+                <div class="text-center mt-6">
+                    <button id="copy-post-btn" type="button"
+                        class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white font-bold text-sm transition-all cursor-pointer active:scale-95">
+                        <i class="fa-regular fa-copy text-gaming-blue"></i>
+                        <span>Copy Post Text for WhatsApp / Facebook (پوسٹ کاپی کریں)</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 5) FOOTER -->
+    <footer id="contact" class="bg-[#05070f] border-t border-slate-800/90 pt-14 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10 border-b border-slate-800/80">
+                <!-- Brand Info -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-gaming-blue to-gaming-purple flex items-center justify-center text-slate-950 font-black">
+                            <i class="fa-solid fa-gamepad"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-black text-lg text-white">TOP GAMING STORE</h3>
+                            <p class="text-xs text-gaming-gold urdu-ui">ٹاپ گیمنگ سٹور</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Fast & 100% Safe Gaming Top-Up & Tokens store in Pakistan. Instant delivery for PUBG Mobile, Free Fire, Ludo World, and Honor of Kings.
+                    </p>
+                </div>
+
+                <!-- Quick Services Links -->
+                <div>
+                    <h4 class="font-bold text-white uppercase tracking-wider text-sm mb-4">Available Games</h4>
+                    <ul class="space-y-2.5 text-sm text-slate-400">
+                        <li><a href="#services" class="hover:text-gaming-gold transition-colors"><i class="fa-solid fa-angle-right text-gaming-gold mr-2"></i>PUBG Mobile UC</a></li>
+                        <li><a href="#services" class="hover:text-orange-400 transition-colors"><i class="fa-solid fa-angle-right text-orange-400 mr-2"></i>Free Fire Diamonds</a></li>
+                        <li><a href="#services" class="hover:text-emerald-400 transition-colors"><i class="fa-solid fa-angle-right text-emerald-400 mr-2"></i>Ludo World Tokens</a></li>
+                        <li><a href="#services" class="hover:text-gaming-blue transition-colors"><i class="fa-solid fa-angle-right text-gaming-blue mr-2"></i>Honor of Kings Tokens</a></li>
+                    </ul>
+                </div>
+
+                <!-- Direct Contact -->
+                <div>
+                    <h4 class="font-bold text-white uppercase tracking-wider text-sm mb-4">Order & Support</h4>
+                    <div class="space-y-3">
+                        <a href="https://wa.me/923415300191?text=Assalam-o-Alaikum%20Top%20Gaming%20Store!" target="_blank" rel="noopener noreferrer"
+                           class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-900/90 hover:bg-emerald-950/50 border border-slate-800 hover:border-emerald-500/50 transition-all group">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-slate-400">Official WhatsApp / Call</span>
+                                <span class="font-black text-base text-white tracking-wide">0341-5300191</span>
+                            </div>
+                        </a>
+
+                        <a href="#quick-order"
+                           class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-900/90 hover:bg-purple-950/40 border border-slate-800 hover:border-gaming-purple/50 transition-all group">
+                            <div class="w-10 h-10 rounded-lg bg-gaming-purple/15 text-gaming-purple flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-bolt text-lg"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-slate-400">Instant Checkout</span>
+                                <span class="font-bold text-sm text-white">Place Custom Order Online</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>&copy; <span id="year"></span> Top Gaming Store (ٹاپ گیمنگ سٹور). All Rights Reserved.</p>
+                <p class="text-slate-400">Gaming Top-Up & Tokens • WhatsApp: 03415300191</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- COMPLETE INTERACTIVE JAVASCRIPT -->
+    <script>
+        // 1. Set Current Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // 2. Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 3. WhatsApp Configuration
+        const WHATSAPP_NUMBER = '923415300191';
+
+        // 4. Toast Notification Helper
+        function showToast(title, message) {
+            const toastBox = document.getElementById('toast-box');
+            document.getElementById('toast-title').textContent = title;
+            document.getElementById('toast-msg').textContent = message;
+            
+            toastBox.classList.remove('hidden');
+            setTimeout(() => {
+                toastBox.classList.remove('translate-y-4', 'opacity-0');
+            }, 10);
+
+            setTimeout(() => {
+                toastBox.classList.add('translate-y-4', 'opacity-0');
+                setTimeout(() => toastBox.classList.add('hidden'), 300);
+            }, 3500);
+        }
+
+        // 5. Games & Packages Data (Matching your banner image)
+        const servicesData = [
+            {
+                id: 'pubg',
+                titleEn: 'PUBG Mobile UC',
+                titleUr: 'پب جی موبائل یو سی',
+                icon: 'fa-crosshairs',
+                badge: 'POPULAR',
+                borderClass: 'border-gaming-gold/40 hover:border-gaming-gold',
+                iconBg: 'bg-gaming-gold/15 text-gaming-gold',
+                packages: [
+                    '60 UC (Instant)',
+                    '325 UC (Royal Pass)',
+                    '660 UC (Elite Pass)',
+                    '1800 UC',
+                    '3850 UC',
+                    '8100 UC'
+                ]
+            },
+            {
+                id: 'freefire',
+                titleEn: 'Free Fire Diamonds',
+                titleUr: 'فری فائر ڈائمنڈز',
+                icon: 'fa-fire',
+                badge: 'FAST UID',
+                borderClass: 'border-orange-500/40 hover:border-orange-400',
+                iconBg: 'bg-orange-500/15 text-orange-400',
+                packages: [
+                    '100 Diamonds',
+                    '310 Diamonds',
+                    '520 Diamonds',
+                    '1060 Diamonds',
+                    'Weekly Membership',
+                    'Monthly Membership'
+                ]
+            },
+            {
+                id: 'ludo',
+                titleEn: 'Ludo World Tokens',
+                titleUr: 'لوڈو ورلڈ ٹوکنز اور کوئنز',
+                icon: 'fa-dice',
+                badge: 'INSTANT',
+                borderClass: 'border-emerald-500/40 hover:border-emerald-400',
+                iconBg: 'bg-emerald-500/15 text-emerald-400',
+                packages: [
+                    'Starter Tokens Pack',
+                    'Silver Coins / Tokens',
+                    'Gold Tokens Bundle',
+                    'VIP Pass / Diamond Pack',
+                    'Mega Tokens Bundle'
+                ]
+            },
+            {
+                id: 'hok',
+                titleEn: 'Honor of Kings',
+                titleUr: 'آنر آف کنگز ٹوکنز',
+                icon: 'fa-crown',
+                badge: '100% SAFE',
+                borderClass: 'border-gaming-blue/40 hover:border-gaming-blue',
+                iconBg: 'bg-gaming-blue/15 text-gaming-blue',
+                packages: [
+                    '80 Tokens',
+                    '240 Tokens',
+                    '400 Tokens',
+                    '800 Tokens',
+                    '2400 Tokens',
+                    'Weekly Card'
+                ]
+            },
+            {
+                id: 'yalla',
+                titleEn: 'Yalla Ludo & Apps',
+                titleUr: 'یلا لوڈو اور دیگر ایپس',
+                icon: 'fa-gem',
+                badge: 'AVAILABLE',
+                borderClass: 'border-gaming-purple/40 hover:border-gaming-purple',
+                iconBg: 'bg-gaming-purple/15 text-gaming-purple',
+                packages: [
+                    'Yalla Ludo Diamonds',
+                    'Yalla Ludo Gold Coins',
+                    'TikTok Coins',
+                    '8 Ball Pool Cash/Coins'
+                ]
+            },
+            {
+                id: 'custom',
+                titleEn: 'Other Online Games',
+                titleUr: 'دیگر تمام آن لائن گیمز',
+                icon: 'fa-headset',
+                badge: 'ON DEMAND',
+                borderClass: 'border-slate-700 hover:border-white/50',
+                iconBg: 'bg-slate-800 text-white',
+                packages: [
+                    'Call of Duty CP',
+                    'Roblox Robux',
+                    'Valorant Points',
+                    'Any Custom Top-Up'
+                ]
+            }
+        ];
+
+        // 6. Render Service Cards Dynamically
+        const servicesGrid = document.getElementById('services-grid');
+
+        servicesData.forEach(service => {
+            const card = document.createElement('div');
+            card.className = `bg-gaming-card border ${service.borderClass} rounded-3xl p-6 card-border-glow flex flex-col justify-between shadow-lg`;
+
+            const optionsHtml = service.packages
+                .map(pkg => `<option value="${pkg}">${pkg}</option>`)
+                .join('');
+
+            card.innerHTML = `
+                <div>
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl ${service.iconBg} flex items-center justify-center text-2xl">
+                            <i class="fa-solid ${service.icon}"></i>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-slate-900 border border-slate-700 text-[11px] font-extrabold tracking-wider text-slate-300">
+                            ${service.badge}
+                        </span>
+                    </div>
+
+                    <h3 class="text-xl font-black text-white">${service.titleEn}</h3>
+                    <p class="urdu-ui text-sm text-slate-400 font-semibold mt-0.5 mb-5" dir="rtl">${service.titleUr}</p>
+
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
+                        Choose Package / پیکج منتخب کریں:
+                    </label>
+                    <select id="pkg-${service.id}" class="w-full bg-slate-900 border border-slate-700 focus:border-gaming-blue rounded-xl px-3.5 py-3 text-sm text-white font-semibold outline-none mb-5">
+                        ${optionsHtml}
+                    </select>
+                </div>
+
+                <button type="button" onclick="orderDirectCard('${service.titleEn}', 'pkg-${service.id}')"
+                    class="w-full py-3.5 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-sm transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95 shadow-md shadow-emerald-500/20">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Order on WhatsApp / آرڈر کریں</span>
+                </button>
+            `;
+
+            servicesGrid.appendChild(card);
+        });
+
+        // 7. Direct Card WhatsApp Order Function
+        function orderDirectCard(gameName, selectId) {
+            const selectedPkg = document.getElementById(selectId).value;
+            const message = `Assalam-o-Alaikum *Top Gaming Store*! 🎮\n\nMujhe ye Top-Up order karna hai:\n🔹 *Game:* ${gameName}\n🔹 *Package:* ${selectedPkg}\n\nPlease rate aur payment details bata dein.`;
+            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+            
+            showToast('Opening WhatsApp...', `${gameName} - ${selectedPkg}`);
+            window.open(url, '_blank', 'noopener,noreferrer');
+        }
+
+        // 8. Quick Order Form Submission
+        const orderForm = document.getElementById('whatsapp-order-form');
+        orderForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const service = document.getElementById('service-select').value;
+            const playerId = document.getElementById('player-id').value.trim();
+            const pkgAmount = document.getElementById('package-amount').value.trim();
+            const customerName = document.getElementById('customer-name').value.trim();
+
+            let message = `Assalam-o-Alaikum *Top Gaming Store*! 🎮\n\n*New Top-Up Order Details:*\n`;
+            if (customerName) {
+                message += `👤 *Name:* ${customerName}\n`;
+            }
+            message += `🎯 *Game:* ${service}\n🆔 *Player ID:* ${playerId}\n💎 *Package:* ${pkgAmount}\n\nPlease confirm availability & payment method.`;
+
+            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+            showToast('Redirecting to WhatsApp', 'Aapka order WhatsApp par bheja ja raha hai...');
+            window.open(url, '_blank', 'noopener,noreferrer');
+        });
+
+        // 9. Copy Promotional Post Text Button
+        const copyPostBtn = document.getElementById('copy-post-btn');
+        copyPostBtn.addEventListener('click', () => {
+            const adText = `🎮 *TOP GAMING STORE — Gaming Top-Up & Tokens* 🎮\n⚡ *Fast & 100% Safe Delivery* ⚡\n\nاب اپنی پسندیدہ گیمز میں UC، ڈائمنڈز اور ٹوکنز حاصل کریں انتہائی مناسب ریٹ اور فوری ڈلیوری کے ساتھ:\n\n🪂 PUBG Mobile UC\n🔥 Free Fire Diamonds\n🎲 Ludo World Tokens\n👑 Honor of Kings Tokens\n\n📲 *WhatsApp / Call:* 03415300191\n💯 مکمل گارنٹی اور تیز ترین سروس!`;
+
+            navigator.clipboard.writeText(adText).then(() => {
+                showToast('Post Copied! (پوسٹ کاپی ہو گئی)', 'Ab aap isay WhatsApp ya Facebook par paste kar sakte hain.');
+            }).catch(() => {
+                showToast('Copy Ready', 'Text copied to clipboard.');
+            });
+        });
+    </script>
+</body>
+</html>
